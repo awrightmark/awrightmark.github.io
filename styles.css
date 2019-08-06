@@ -9,5 +9,6 @@ body {
 }
 
 p {
-    max-width: 20% 80%;
+    max-width: 60%;
+    margin: 0 auto;
 }
