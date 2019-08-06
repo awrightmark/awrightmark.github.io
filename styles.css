@@ -5,11 +5,11 @@ body {
 .Menu {
     color: green;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 p {
-    font-size: 18px;
+    font-size: 24px;
     max-width: 60%;
     margin: 0 auto;
 }
