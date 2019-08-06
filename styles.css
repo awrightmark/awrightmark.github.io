@@ -1,4 +1,7 @@
 body {
-    color: blue;
     text-align: center;
+}
+
+.menu {
+    color: green;
 }
