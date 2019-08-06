@@ -1,4 +1,7 @@
-h1 p {
-    max-width: 500px;
+h1 {
+    margin: auto;
+}
+
+p {
     margin: auto;
 }
