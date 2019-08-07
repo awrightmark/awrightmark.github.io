@@ -7,10 +7,12 @@ body {
     color: green;
     font-weight: bold;
     font-size: 32px;
+    padding: 20px;
 }
 
 p {
     font-size: 24px;
     max-width: 60%;
     margin: 0 auto;
+    padding: 20px;
 }
