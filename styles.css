@@ -24,4 +24,6 @@ p {
 li {
     font-size: 18px;
     text-align: left;
+    max-width: 60%;
+    margin: 0 auto;
 }
