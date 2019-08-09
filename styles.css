@@ -22,3 +22,8 @@ p {
     margin: 0 auto;
     padding: 20px;
 }
+
+ul {
+    font-size: 18px;
+    padding: 12px;
+}
