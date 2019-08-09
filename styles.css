@@ -31,6 +31,10 @@ li {
     padding: 4px;
 }
 
-a {
+a:list {
     color: LightYellow;
+}
+
+a:hover {
+    color: Tomato;
 }
