@@ -9,7 +9,7 @@ body {
     border-radius: 25px;
     font-weight: bold;
     font-size: 28px;
-    padding: 16;
+    margin: 12px;
 }
 
 h3 {
@@ -28,4 +28,12 @@ li {
     text-align: left;
     max-width: 60%;
     margin: 0 auto;
+}
+
+a:link {
+    color: yellow;
+}
+
+a:visited {
+    color: tomato;
 }
