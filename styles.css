@@ -12,6 +12,10 @@ body {
     margin: 12px;
 }
 
+.Int {
+    color: Tomato;
+}
+
 h3 {
     font-size: 24px;
     font-weight: bold;
