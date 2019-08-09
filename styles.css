@@ -3,20 +3,6 @@ body {
     background-color: Beige;
 }
 
-.Menu {
-    color: green;
-    background-color: olive;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 28px;
-    margin: 12px;
-    padding: 6px;
-}
-
-.Int {
-    color: Tomato;
-}
-
 h3 {
     font-size: 24px;
     font-weight: bold;
@@ -42,4 +28,27 @@ a {
 
 a:hover {
     color: Tomato;
+}
+
+.Menu {
+    color: green;
+    background-color: olive;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 28px;
+    margin: 12px;
+    padding: 6px;
+}
+
+.Int {
+    color: Tomato;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 25%;
+  padding: 4px;
 }
