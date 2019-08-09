@@ -46,9 +46,11 @@ a:hover {
 
 .row {
   display: flex;
+  width: 100%;
 }
 
 .column {
   flex: 25%;
   padding: 4px;
+  height: 56px;
 }
