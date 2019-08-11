@@ -29,10 +29,13 @@ a {
 a:hover {
     color: Tomato;
 }
+.Background {
+    background-color: Blue;
+}
 
 .Menu {
     color: green;
-    background-color: olive;
+    background-color: Olive;
     border-radius: 25px;
     font-weight: bold;
     font-size: 28px;
