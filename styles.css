@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: Beige;
+    background-color: White;
 }
 
 h3 {
@@ -10,7 +10,6 @@ h3 {
 
 p {
     font-size: 18px;
-    max-width: 60%;
     margin: 8px auto;
 }
 
@@ -30,7 +29,12 @@ a:hover {
     color: Tomato;
 }
 .Background {
-    background-color: Blue;
+    background-color: Beige;
+    max-width: 60%;
+    margin: 0% 20%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
 .Menu {
