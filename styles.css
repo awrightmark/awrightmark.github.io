@@ -16,7 +16,7 @@ p {
 li {
     font-size: 18px;
     text-align: left;
-    max-width: 85%;
+    width: 85%;
     margin: 0 auto;
     padding: 4px;
 }
@@ -34,6 +34,7 @@ a:hover {
     position: absolute;
     top: 0;
     bottom: 0;
+    width: 85%;
 }
 
 .Menu {
