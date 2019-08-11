@@ -28,13 +28,14 @@ a {
 a:hover {
     color: Tomato;
 }
+
 .Background {
     background-color: Beige;
     margin: 0% 15%;
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 85%;
+    width: 70%;
 }
 
 .Menu {
