@@ -1,6 +1,8 @@
 body {
     text-align: center;
     background-color: DarkSlateGrey;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 h3 {
@@ -52,6 +54,8 @@ a:hover {
     font-size: 22px;
     margin: 12px;
     padding: 8px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .Int {
