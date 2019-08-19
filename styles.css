@@ -47,7 +47,7 @@ a:hover {
 
 .Menu {
     color: green;
-    background-color: Olive;
+    background: linear-gradient(to top, Olive, Khaki);
     border-radius: 25px;
     font-weight: bold;
     font-size: 22px;
