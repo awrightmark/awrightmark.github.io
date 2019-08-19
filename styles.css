@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: DarkSlateGrey;
+    background: radial-gradient(Black, DarkSlateGrey);
     margin: 0px;
 }
 
