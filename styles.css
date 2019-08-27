@@ -17,7 +17,9 @@ h6 {
 p {
     font-size: 18px;
     margin: 8px auto;
-    width: 85%
+    width: 85%;
+    text-align: justify;
+    text-indent: 50px;
 }
 
 li {
