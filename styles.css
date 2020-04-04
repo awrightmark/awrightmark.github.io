@@ -41,7 +41,7 @@ a:hover {
 }
 
 .Background {
-    background-image: linear-gradient(to top, darkseagreen, ghostwhite 75%);
+    background-image: linear-gradient(to bottom, ghostwhite 35%, darkseagreen 85%, seagreen);
     margin: 0% 15%;
     position: relative;
     top: 0;
