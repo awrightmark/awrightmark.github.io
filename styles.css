@@ -40,6 +40,10 @@ a:hover {
     color: Tomato;
 }
 
+th {
+  text-align: left;
+}
+
 .Background {
     background-image: linear-gradient(to bottom, ghostwhite 35%, darkseagreen 85%, seagreen);
     margin: 0% 15%;
