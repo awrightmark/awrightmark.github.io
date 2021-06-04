@@ -77,12 +77,24 @@ th {
     color: Tomato;
 }
 
+.column {
+  flex: 25%;
+  padding: 4px;
+}
+
+.column2 {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
 .row {
   display: flex;
   width: 100%;
 }
 
-.column {
-  flex: 25%;
-  padding: 4px;
+.row2::after {
+  content: "";
+  clear: both;
+  display: table;
 }
