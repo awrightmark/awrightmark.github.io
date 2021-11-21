@@ -54,7 +54,7 @@ th {
 }
 
 .Background {
-    background-image: linear-gradient(to bottom, ghostwhite 35%, darkseagreen 85%, seagreen);
+    background-image: linear-gradient(to bottom, ghostwhite 20%, darkseagreen 90%);
     margin: 0% 15%;
     position: relative;
     top: 0;
@@ -64,13 +64,10 @@ th {
 
 .Menu {
     color: green;
-    background: linear-gradient(to top, Olive, Khaki);
-    border-radius: 25px;
+    background: Olive;
     font-weight: bold;
     font-size: 16px;
-    margin: 12px;
     padding: 16px 8px;
-    margin-top: 0px;
 }
 
 .Int {
