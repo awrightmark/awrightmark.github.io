@@ -82,9 +82,13 @@ html {
 }
 
 a {
-    color: LightYellow;
+    color: #145A32;
 }
 
 a:hover {
-    color: Tomato;
+    color: #1B2631;
+}
+
+.Menu {
+    font-weight: bold;
 }
