@@ -64,3 +64,19 @@ html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
+
+.container-lg {
+    max-width: 1012px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.px-3 {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+}
+
+.my-5 {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+}
