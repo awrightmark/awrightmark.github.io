@@ -80,3 +80,11 @@ html {
     margin-top: 32px !important;
     margin-bottom: 32px !important;
 }
+
+a {
+    color: LightYellow;
+}
+
+a:hover {
+    color: Tomato;
+}
