@@ -37,6 +37,7 @@ h1 {
 
 h2 {
   font-size: 18px;
+  margin-top: 23px;
 }
 
 .markdown-body {
@@ -91,3 +92,5 @@ a:hover {
 strong {
   font-weight: bold;
 }
+
+.emphasized { font-style: italic; }
