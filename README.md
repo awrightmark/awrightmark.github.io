@@ -1,4 +1,25 @@
-# awrightmark.github.io
-Personal Professional Website
-
-This repository, as it currently stands, is a test project in developing a personal website to host my professional scientific content. Once the first full version is completed, I will return to and update this README file.
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container-lg px-3 my-5 markdown-body">
+    <h1>Mark A. Wright, PhD Candidate</h1>
+    <div class="Menu" style="margin-left: 5%;margin-right: 5%;margin-top:12px;margin-bottom:0px;">
+      <a style="text-decoration: None; padding: 12px;" href="home.html">Home<a/>
+      <a style="text-decoration: None; padding: 12px;" href="education.html">Education</a>
+      <a style="text-decoration: None; padding: 12px;" href="research.html">Research</a>
+      <a style="text-decoration: None; padding: 12px;" href="outreach.html">Outreach</a>
+    </div>
+    <p>I am a PhD Candidate in the <a href="https://projects.iq.harvard.edu/spierce/home" target="_blank">Pierce Lab</a> at Harvard University. I am interested in the evolution of locomotor systems, and my doctoral work focuses on the sprawling-to-parasagittal transition in synapsids with an emphasis on the hindlimb. To investigate this topic, my research integrates functional morphology, phylogenetic comparative methods, and experimental biomechanics. I also have an interest in pedagogy and have teaching experience ranging from human to comparative anatomy, cadaveric to lab-based, including syllabus design as a primary instructor.
+    <br><br>
+    I am currently searching for majority-teaching roles that include the possibility of pursuing independent research.
+    </p>
+    <div>
+      <img style="display: block; margin-left: auto; margin-right: auto; width: 30%;" src="https://user-images.githubusercontent.com/49542820/78418070-d0039b00-7606-11ea-9afc-f619b0977f1c.JPG" alt="Tegu XROMM">
+    </div>
+    <hr/>
+  </div>
+</body>
+</html>
