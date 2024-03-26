@@ -72,6 +72,13 @@ html {
     margin-left: auto;
 }
 
+.container-2-bodies {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+
 .px-3 {
     padding-right: 16px !important;
     padding-left: 16px !important;
