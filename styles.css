@@ -58,13 +58,13 @@ body {
     line-height: 1.5;
     color: #24292e;
     background-color: #fff;
+    text-align:justify;
 }
 
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    text-align:justify;
 }
 
 .container-lg {
