@@ -9,15 +9,27 @@
   <div id="mileage">Loading...</div>
 
   <script>
-    async function fetchMileage() {
-      const rssUrl = 'https://www.strava.com/feeds/athletes/11854543';
-      const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl); // bypass CORS
+  async function fetchMileage() {
+    const rssUrl = 'https://www.strava.com/feeds/athletes/YOUR_ATHLETE_ID';
+    const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl);
 
+    try {
       const res = await fetch(proxyUrl);
       const data = await res.json();
+
+      if (!data.contents) {
+        console.error('Failed to retrieve RSS feed content');
+        return;
+      }
+
       const parser = new DOMParser();
       const xml = parser.parseFromString(data.contents, 'application/xml');
       const items = xml.querySelectorAll('item');
+
+      if (items.length === 0) {
+        console.error('No items found in RSS feed');
+        return;
+      }
 
       let mileageThisWeek = 0;
       const now = new Date();
@@ -28,22 +40,34 @@
         const title = item.querySelector('title').textContent;
         const pubDate = new Date(item.querySelector('pubDate').textContent);
 
-        // Filter by date
+        // Log the title and date to verify data
+        console.log("Title:", title, "Date:", pubDate);
+
         if (pubDate >= startOfWeek) {
           const match = title.match(/([\d.]+)\s?(mi|km)/i);
+
           if (match) {
             const distance = parseFloat(match[1]);
             const unit = match[2].toLowerCase();
+
+            // Log the matched distance and unit
+            console.log("Matched Distance:", distance, "Unit:", unit);
+
             mileageThisWeek += unit === 'km' ? distance * 0.621371 : distance;
           }
         }
       });
 
+      console.log("Total Mileage This Week:", mileageThisWeek);
       document.getElementById('mileage').innerText =
         `You’ve run ${mileageThisWeek.toFixed(2)} miles this week.`;
+    } catch (error) {
+      console.error('Error fetching Strava data:', error);
     }
+  }
 
-    fetchMileage();
+  fetchMileage();
+
   </script>
 </body>
 </html>
