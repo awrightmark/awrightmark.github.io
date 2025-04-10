@@ -3,74 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weekly Mileage Tracker</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #f4f4f4;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input, button {
-      padding: 0.5rem;
-      margin-top: 0.5rem;
-      width: 100%;
-      font-size: 1rem;
-    }
-    h1 {
-      margin-bottom: 1rem;
-    }
-  </style>
+  <title>Strava Weekly Mileage</title>
 </head>
 <body>
-  <h1>Strava Weekly Mileage</h1>
-  <label for="token">Enter your Strava Access Token:</label>
-  <input type="text" id="token" placeholder="Paste token here" />
-  <button onclick="getMileage()">Get My Weekly Mileage</button>
-  <p id="result" style="margin-top: 1rem; font-weight: bold;"></p>
+  <h1>Strava Weekly Mileage Tracker</h1>
+  <button id="loginBtn">Login with Strava</button>
+  <div id="mileageDisplay"></div>
 
   <script>
-    async function getMileage() {
-      const token = document.getElementById('token').value.trim();
-      const resultEl = document.getElementById('result');
-      resultEl.innerText = 'Loading...';
+    const clientId = '155039';
+    const redirectUri = 'https://awrightmark.github.io/periodyze.html'; // Replace with actual GitHub Pages URL
+    const backendUrl = 'https://your-backend-api.com'; // You'll deploy this
 
-      if (!token) {
-        resultEl.innerText = 'Please enter a valid token.';
-        return;
-      }
+    // If ?code=... is present, exchange it
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
 
-      try {
-        const res = await fetch('https://www.strava.com/api/v3/athlete/activities?per_page=100', {
-          headers: { 'Authorization': 'Bearer ' + token }
+    if (code) {
+      fetch(`${backendUrl}/exchange_token?code=${code}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.mileage !== undefined) {
+            document.getElementById('mileageDisplay').innerText =
+              `You’ve run ${data.mileage.toFixed(2)} miles this week.`;
+          } else {
+            document.getElementById('mileageDisplay').innerText = 'Unable to get mileage.';
+          }
         });
-        const data = await res.json();
-
-        if (!Array.isArray(data)) {
-          resultEl.innerText = 'Error fetching data. Please check your token.';
-          return;
-        }
-
-        const now = new Date();
-        const startOfWeek = new Date(now);
-        startOfWeek.setDate(now.getDate() - now.getDay()); // Sunday
-
-        const weeklyRuns = data.filter(activity => {
-          const date = new Date(activity.start_date);
-          return date >= startOfWeek && activity.type === 'Run';
-        });
-
-        const mileage = weeklyRuns.reduce((sum, act) => sum + act.distance, 0) / 1609.34;
-
-        resultEl.innerText = `You’ve run ${mileage.toFixed(2)} miles this week.`;
-      } catch (err) {
-        console.error(err);
-        resultEl.innerText = 'Something went wrong. See console for details.';
-      }
     }
+
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      const authUrl = `https://www.strava.com/oauth/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&approval_prompt=force&scope=activity:read_all`;
+      window.location.href = authUrl;
+    });
   </script>
 </body>
 </html>
