@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Mileage</title>
+</head>
+<body>
+  <h1>Weekly Running Mileage</h1>
+  <div id="mileage">Loading...</div>
+
+  <script>
+    async function fetchMileage() {
+      const rssUrl = 'https://www.strava.com/feeds/athletes/11854543';
+      const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(rssUrl); // bypass CORS
+
+      const res = await fetch(proxyUrl);
+      const data = await res.json();
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(data.contents, 'application/xml');
+      const items = xml.querySelectorAll('item');
+
+      let mileageThisWeek = 0;
+      const now = new Date();
+      const startOfWeek = new Date(now);
+      startOfWeek.setDate(now.getDate() - now.getDay()); // Sunday
+
+      items.forEach(item => {
+        const title = item.querySelector('title').textContent;
+        const pubDate = new Date(item.querySelector('pubDate').textContent);
+
+        // Filter by date
+        if (pubDate >= startOfWeek) {
+          const match = title.match(/([\d.]+)\s?(mi|km)/i);
+          if (match) {
+            const distance = parseFloat(match[1]);
+            const unit = match[2].toLowerCase();
+            mileageThisWeek += unit === 'km' ? distance * 0.621371 : distance;
+          }
+        }
+      });
+
+      document.getElementById('mileage').innerText =
+        `You’ve run ${mileageThisWeek.toFixed(2)} miles this week.`;
+    }
+
+    fetchMileage();
+  </script>
+</body>
+</html>
