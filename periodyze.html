@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Strava Weekly Mileage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized Running Training Plan</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Strava Weekly Mileage Tracker</h1>
-  <button id="loginBtn">Login with Strava</button>
-  <div id="mileageDisplay"></div>
+    <h1>Customized Running Training Plan</h1>
+    <form id="training-plan-form">
+        <label for="race-type">I am training for a:</label>
+        <select id="race-type" name="race-type">
+            <option value="5k">5k</option>
+            <option value="10k">10k</option>
+            <option value="HM">Half Marathon (HM)</option>
+            <option value="FM">Full Marathon (FM)</option>
+        </select>
+        <br>
 
-  <script>
-    const clientId = '155039';
-    const redirectUri = 'https://awrightmark.github.io/periodyze.html'; // Replace with actual GitHub Pages URL
-    const backendUrl = 'https://your-backend-api.com'; // You'll deploy this
+        <label for="average-mileage">My last four weeks average mileage is:</label>
+        <input type="number" id="average-mileage" name="average-mileage" min="0" required>
+        <br>
 
-    // If ?code=... is present, exchange it
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get('code');
+        <label for="race-weeks">My goal race date is:</label>
+        <input type="number" id="race-weeks" name="race-weeks" min="6" max="20" required>
+        <br>
 
-    if (code) {
-      fetch(`${backendUrl}/exchange_token?code=${code}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.mileage !== undefined) {
-            document.getElementById('mileageDisplay').innerText =
-              `You’ve run ${data.mileage.toFixed(2)} miles this week.`;
-          } else {
-            document.getElementById('mileageDisplay').innerText = 'Unable to get mileage.';
-          }
-        });
-    }
+        <button type="submit">Generate Training Plan</button>
+    </form>
 
-    document.getElementById('loginBtn').addEventListener('click', () => {
-      const authUrl = `https://www.strava.com/oauth/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&approval_prompt=force&scope=activity:read_all`;
-      window.location.href = authUrl;
-    });
-  </script>
+    <div id="training-plan-display"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
