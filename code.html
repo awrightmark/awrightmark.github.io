@@ -20,16 +20,16 @@
     <p>
     <ul>
       <li><strong>Problem:</strong> Existing community-developed tools for animating mesh rigidbodies based on CT marker coordinates resulted in inconsistent Euler XYZ rotation order keyframe data.</li>
-      <li><strong>Solution:</strong> I engineered a custom R script leveraging 4D quaternion notion to mathematically resolve rotation inconsistencies across 88k 6-DoF data points.</li>
-      <li><strong>Impact:</strong> This tool, available <a href="https://github.com/awrightmark/MayaEulerCorrections" target="_blank">here</a>, eliminated manual data cleaning, ensuring 100% kinematic accuracy for downstream analytical engines.</li>
-      <li><strong>Visual:</strong> "Before" and "After" sample of Euler XYZ coordinates (X: top, Y: middle, Z: bottom) for a ~300 keyframe segment of real data. See the full published work <a href="https://doi.org/10.1242/jeb.251911" target="_blank">here</a>.</li>
+      <li><strong>Solution:</strong> I engineered a custom <a href="https://github.com/awrightmark/MayaEulerCorrections" target="_blank">R script</a> leveraging 4D quaternion notion to mathematically resolve rotation inconsistencies across 88k 6-DoF data points.</li>
+      <li><strong>Impact:</strong> This tool eliminated manual data cleaning steps while ensuring 100% kinematic accuracy for downstream analytical engines.</li>
+      <li><strong>Visual:</strong> "Before" and "After" sample of Euler XYZ coordinates (X: top, Y: middle, Z: bottom) across a ~300 keyframe segment of real data. See the full published work <a href="https://doi.org/10.1242/jeb.251911" target="_blank">here</a>.</li>
     </ul>
-    <img style="display: block; margin-left: auto; margin-right: auto; max-width: 100%; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/Rot_Order_Corr.png" alt="Before & After Rotation Order Correction">
+    <img style="display: block; margin-left: auto; margin-right: auto; max-width: 560px; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/Rot_Order_Corr.png" alt="Before & After Rotation Order Correction">
     <img style="display: block; margin-left: auto; margin-right: auto; max-width: 560px; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/XrayPoses.png" alt="X-Ray Poses of Tegu and Opossum">
     </p>
     <br><br>
 
-    <h2>Minimum Convex Hull Mass and Center of Mass Calculation</h2>
+    <h2>3D Mesh Property Automation</h2>
     <p>
     <ul>
       <li><strong>Problem:</strong> Manual mass-property estimation for non-standard anatomical specimens was slow and prone to human error.</li>
@@ -37,11 +37,21 @@
       <li><strong>Impact:</strong> This tool, available <a href="https://github.com/awrightmark/MCH_MassCoM" target="_blank">here</a>, produced rapid, accurate whole-body and 'anatomical segment' mass estimates for immediate integration into predictive linear models.</li>
       <li><strong>Visual:</strong> Digitized models of a modern crocodile (top) and fossil therapsid (bottom) via CT scan and photogrammetry, respectively. Left-to-right demonstrates watertight wrappage of body segments into convex hulls prior for geometric mass-property estimation. See the full published work <a href="https://doi.org/10.1093/iob/obae034" target="_blank">here</a>.</li>
     </ul>
-    <img style="display: block; margin-left: auto; margin-right: auto; max-width: 560px; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/Rot_Order_Corr.png" alt="Convex Hull Wrapping of Vertebrate Skeletons">
+    <img style="display: block; margin-left: auto; margin-right: auto; max-width: 560px; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/CHull_Automation.png" alt="Convex Hull Wrapping of Vertebrate Skeletons">
     </p>
     <br><br>
 
-
+    <h2>Comparing Morphogenetic Shape Data and Trajectories</h2>
+    <p>
+    <ul>
+      <li><strong>Problem:</strong> Analyzing and comparing high-dimensional shape change trajectories across time series was a qualitative, non-standardized process.</li>
+      <li><strong>Solution:</strong> I engineered <strong>MorphoTraj</strong>, a specialized R-based toolkit designed to synthesize morphogenetic shape change trajectories for high-dimensional time series shape data.</li>
+      <li><strong>Impact:</strong> This analytical toolkit provided a standardized framework for comparing developmental (i.e., morphogenetic) shape change trajectories to macroevolutionary bone shape trends.</li>
+      <li><strong>Visual:</strong> Sample of anonymized dataset from unpublished work. Arrows represent multi-dimentional shape change trajectories for time series data, color-coded same as underlying points.</li>
+    </ul>
+    <img style="display: block; margin-left: auto; margin-right: auto; max-width: 560px; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/CHull_Automation.png" alt="Anonymized Multi-Dimensional Morphogenetic Trajectories">
+    </p>
+    <br>
 
 
 
@@ -76,9 +86,9 @@
     <a href="https://github.com/awrightmark/MorphoTraj" target="_blank">Link</a> to GitHub repository. This script was used for Chapter 3 of my PhD dissertation.
     </p>
     <br>
+
     <hr/>
     <p style="text-align: center;">Designed by me. All rights reserved. ©</p>
-
   </div>
 </body>
 </html>
