@@ -5,6 +5,7 @@
 </head>
 <body>
   <div class="container-lg px-3 my-5 markdown-body">
+
     <h1>Mark A. Wright</h1>
     <div class="Menu" style="margin-left: 1%;margin-right: 5%;margin-top:12px;margin-bottom:0px;">
       <a style="text-decoration: None; padding: 12px;" href="index.html">Home</a>
@@ -14,6 +15,20 @@
       <a style="text-decoration: None; padding: 12px;" href="outreach.html">Outreach</a>
     </div>
     <hr/>
+
+    <h2>Automated Kinematic Correction (Euler-to-Quaternion)</h2>
+    <p>
+    <ul>
+      <li><strong>Problem:</strong> Existing community-developed tools for animating mesh rigidbodies based on CT marker coordinates resulted in inconsistent Euler XYZ rotation order keyframe data.</li>
+      <li><strong>Solution:</strong> I engineered a custom R script leveraging 4D quaternion notion to mathematically resolve rotation inconsistencies across 88k 6-DoF data points.</li>
+      <li><strong>Impact:</strong> This tool, available <a href="https://github.com/awrightmark/MayaEulerCorrections" target="_blank">here</a>, eliminated manual data cleaning, ensuring 100% kinematic accuracy for downstream analytical engines.</li>
+      <li><strong>Visual:</strong> "Before" and "After" sample of Euler XYZ coordinates (X: top, Y: middle, Z: bottom) for a ~300 keyframe segment of real data. See the full published work <a href="https://doi.org/10.1242/jeb.251911" target="_blank">here</a>.</li>
+    </ul>
+    <img style="display: block; margin-left: auto; margin-right: auto; max-width: 100%; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/Rot_Order_Corr.png" alt="Before & After Rotation Order Correction">
+    <img style="display: block; margin-left: auto; margin-right: auto; max-width: 560px; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/XrayPoses.png" alt="X-Ray Poses of Tegu and Opossum">
+    </p>
+    <br><br>
+
     <h2>Minimum Convex Hull Mass and Center of Mass Calculation</h2>
     <p>
     This Python script takes body segments that have already been separated onto individual surface mesh files, wraps each in its own convex hull, and computes the mass and center of mass for each segment as well as for the whole body.
@@ -24,6 +39,7 @@
     </ul>
     </p>
     <br><br>
+
     <h2>Correcting Inconsistent Euler XYZ Rotation Orders</h2>
     <p>
     This R script corrects inconsistent Euler XYZ rotation orders across a data file by converting Euler coordinates into quaternion notation, which is independent of rotation order, and then converting quaternion notation back into Euler XYZ coordinates. The design provides seamless integration with existing XROMM data processing workflow with Maya.
@@ -35,6 +51,7 @@
     <img style="display: block; margin-left: auto; margin-right: auto; max-width: 560px; max-height: 100%;" src="https://raw.githubusercontent.com/awrightmark/awrightmark.github.io/refs/heads/master/Images/XrayPoses.png" alt="X-Ray Poses of Tegu and Opossum">
     </p>
     <br><br>
+
     <h2>Comparing Morphogenetic Shape Data and Trajectories</h2>
     <p>
     These R functions assist in the calculation of morphogenetic trajectories for developmental series on morphospaces and provide pairwise Euclidean distance calculations for a priori defined groups or individuals on the morphospace.
@@ -44,6 +61,7 @@
     <br>
     <hr/>
     <p style="text-align: center;">Designed by me. All rights reserved. ©</p>
+
   </div>
 </body>
 </html>
